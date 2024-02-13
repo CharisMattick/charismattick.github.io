@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Option Chooser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Random Option Chooser App!</h1>
+    <button onclick="chooseRandomOption()">Choose Random Option</button>
+    <p id="randomOption"></p>
+
+    <script>
+        var options = [
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            // Add more options up to Option 40
+        ];
+
+        function chooseRandomOption() {
+            var randomNumber = Math.floor(Math.random() * options.length);
+            var randomOption = options[randomNumber];
+            document.getElementById("randomOption").textContent = "Your randomly chosen option is: " + randomOption;
+        }
+    </script>
+</body>
+</html>
