@@ -3,32 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Option Chooser</title>
+    <title>Random String Chooser</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
         }
+        button {
+            margin: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+        #output {
+            width: 500px;
+            height: 200px;
+            margin: 20px auto;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+	#logo {
+            width: 200px; /* Adjust the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Add space below the image */
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Random Option Chooser App!</h1>
-    <button onclick="chooseRandomOption()">Choose Random Option</button>
-    <p id="randomOption"></p>
+    <h1>Mattick Board simulator</h1>
+
+	<a href="https://ibb.co/F8QxT6d"><img src="https://i.ibb.co/j3C6Xhj/Mattick-board.jpg" alt="Mattick-board" border="0"></a>
+
+    <p>Click on a button to drop an aspect:</p>
+
+    <button onclick="chooseRandomString('Apathy')">Drop Apathy</button>
+    <button onclick="chooseRandomString('The Mystic')">Drop The Mystic</button>
+    <button onclick="chooseRandomString('The Artist')">Drop The Artist</button>
+    <button onclick="chooseRandomString('The Past')">Drop The Past</button>
+    <button onclick="chooseRandomString('The Taskmaster')">Drop The Taskmaster</button>
+    <button onclick="chooseRandomString('The Performer')">Drop The Performer</button>
+    <button onclick="chooseRandomString('Chaos')">Drop Chaos</button>
+    <button onclick="chooseRandomString('Mattick')">Drop Mattick</button>
+    <button onclick="chooseRandomString('The Scholar')">Drop The Scholar</button>
+    <button onclick="chooseRandomString('The Engineer')">Drop The Engineer</button>
+    <button onclick="chooseRandomString('Ignorance')">Drop Ignorance</button>
+    <button onclick="chooseRandomString('Fear')">Drop Fear</button>
+    <button onclick="chooseRandomString('Despair')">Drop Despair</button>
+
+    <div id="output"></div>
+
+	<button onclick="clearOutput()">Clear Output</button>
 
     <script>
-        var options = [
-            "Option 1",
-            "Option 2",
-            "Option 3",
-            // Add more options up to Option 40
+        var strings = [
+		"Apathy",
+		"Insubstantial",
+		"Mystic Future",
+		"Mystic Present",
+		"Mystic Past",
+		"Artist",
+		"Failure",
+		"Accept",
+		"The Past",
+		"Regret",
+		"Forgive",
+		"The Taskmaster",
+		"Resources",
+		"Greed",
+		"The Performer",
+		"Movement",
+		"Sex",
+		"Chaos",
+		"Pain",
+		"Luck",
+		"Mattick",
+		"Self-love",
+		"Be",
+		"The Scholar",
+		"Mind",
+		"Memory",
+		"The Engineer",
+		"Potency",
+		"Problem Solving",
+		"Ignorance by choice",
+		"Ignorance by ommision",
+		"Ignorance by design",
+		"Fear of unknown",
+		"Fear from experience",
+		"Fear of reaction",
+		"Despair stagnant",
+		"Despair Fear",
+		"Despair Ignorance"
         ];
 
-        function chooseRandomOption() {
-            var randomNumber = Math.floor(Math.random() * options.length);
-            var randomOption = options[randomNumber];
-            document.getElementById("randomOption").textContent = "Your randomly chosen option is: " + randomOption;
+        function chooseRandomString(buttonString) {
+            var randomNumber = Math.floor(Math.random() * strings.length);
+            var randomString = strings[randomNumber];
+            var outputDiv = document.getElementById("output");
+            var message = buttonString + " landed on: " + randomString;
+            var textNode = document.createTextNode(message);
+            var br = document.createElement("br");
+            outputDiv.appendChild(textNode);
+            outputDiv.appendChild(br);
+            outputDiv.scrollTop = outputDiv.scrollHeight;
         }
+
+function clearOutput() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = "";
+
+	}
     </script>
 </body>
 </html>
