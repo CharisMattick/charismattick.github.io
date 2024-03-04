@@ -6,7 +6,17 @@
     <title>Mattick board simulator</title>
     <style>
         body {
-    font-family: Luminari, sans-serif;
+    /* Define the font family */
+@font-face {
+    font-family: 'Luminari';
+    src: url('https://raw.githubusercontent.com/your_username/your_repository/master/path_to_luminari_font.ttf') format('truetype');
+}
+
+/* Apply the font to the header */
+h1 {
+    font-family: 'Luminari', serif; /* Fallback to serif fonts if Luminari isn't available */
+}
+
     text-align: center;
     background-image: url('https://i.ibb.co/j3C6Xhj/Mattick-board.jpg');
     background-size: contain;
