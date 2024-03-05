@@ -11,24 +11,49 @@
     font-family: 'Luminari-Regular';
     src: url('https://github.com/CharisMattick/charismattick.github.io/blob/31e7c4c87a50ed3b43701452ad1ed1f010d3a14c/Luminari-Regular.ttf') format('truetype');
 }
-
 /* Apply the font to the header */
 h1 {
     font-family: 'Luminari-Regular', serif; /* Fallback to serif fonts if Luminari isn't available */
 }
 
     text-align: center;
-    background-image: url('https://i.ibb.co/xh6v7f5/Mattick-board-vertical.jpg');
+    background-image: url('https://i.ibb.co/j3C6Xhj/Mattick-board.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: top; /* Center the background image */
+    background-position: center; /* Center the background image */
     opacity: 1; /* Set background opacity to fully opaque */
 	      }
+
+	    /* Media query for smaller screens (e.g., mobile devices) */
+	@media only screen and (max-width: 768px) {
+        body {
+        background-image: url('https://i.ibb.co/xh6v7f5/Mattick-board-vertical.jpg');
+
+    }
+}
+
+/* Adjustments to maintain clarity of content */
+h1, p, button, #output {
+    position: relative;
+    z-index: 1;
+    color: black; /* Ensures text is readable */
+}
 
 	    /* Button styles */
 .custom-button {
 	    margin: 5px; /* Adjust the margin between buttons */
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
 	    padding: 8px 15px; /* Adjust the padding inside buttons */
 	    font-size: 14px; /* Adjust the font size of buttons */
 	    color: black; /* Set button text color to black */
@@ -37,7 +62,6 @@ h1 {
 	    cursor: pointer; /* Change cursor to pointer on hover */
 	    width: auto; /* Allow buttons to adjust their width based on content */
 	}
-
 .button1 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 75%; /* Adjust the left position for button 1 */
@@ -51,7 +75,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 .button2 {
     top: 600px; /* Adjust the top position for button 1 */
     left: 75%; /* Adjust the left position for button 1 */
@@ -65,7 +88,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button3 {
     top: 900px; /* Adjust the top position for button 1 */
     left: 75%; /* Adjust the left position for button 1 */
@@ -79,7 +101,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button4 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 0%; /* Adjust the left position for button 1 */
@@ -93,7 +114,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button5 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 25%; /* Adjust the left position for button 1 */
@@ -107,7 +127,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button6 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 50%; /* Adjust the left position for button 1 */
@@ -121,7 +140,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button7 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 100%; /* Adjust the left position for button 1 */
@@ -135,7 +153,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button8 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 75%; /* Adjust the left position for button 1 */
@@ -149,7 +166,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button9 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 75%; /* Adjust the left position for button 1 */
@@ -176,7 +192,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button11 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 75%; /* Adjust the left position for button 1 */
@@ -190,7 +205,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button12 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 75%; /* Adjust the left position for button 1 */
@@ -204,7 +218,6 @@ h1 {
     cursor: pointer; /* Change cursor to pointer on hover */
     width: auto; /* Allow buttons to adjust their width based on content */
 }
-
 	    .button13 {
     top: 300px; /* Adjust the top position for button 1 */
     left: 75%; /* Adjust the left position for button 1 */
@@ -220,13 +233,9 @@ h1 {
 }
 /
 	    * Add styles for other buttons similarly */
-
-
-
         button:hover {
             background-color: #ddd; /* Change button background color on hover */
         }
-
        #output {
     width: 300px;
     height: 150px;
@@ -237,8 +246,6 @@ h1 {
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
 }
-
-
         #logo {
             width: 200px; /* Adjust the width of the image */
             height: auto; /* Maintain aspect ratio */
@@ -248,9 +255,7 @@ h1 {
 </head>
 <body>
     <h1>Mattick Board simulator</h1>
-
     <p>Click on a button to drop an aspect:</p>
-
     <button class="custom-button button1" onclick="chooseRandomString('Apathy')">Drop Apathy</button>
     <button class="custom-button button2" onclick="chooseRandomString('The Mystic')">Drop The Mystic</button>
     <button class="custom-button button3" onclick="chooseRandomString('The Artist')">Drop The Artist</button>
@@ -264,11 +269,8 @@ h1 {
     <button class="custom-button button11" onclick="chooseRandomString('Ignorance')">Drop Ignorance</button>
     <button class="custom-button button12" onclick="chooseRandomString('Fear')">Drop Fear</button>
     <button class="custom-button button13" onclick="chooseRandomString('Despair')">Drop Despair</button>
-
     <div id="output"></div>
-
 	<button onclick="clearOutput()">Clear Output</button>
-
     <script>
         var strings = [
 		"Apathy",
@@ -311,7 +313,6 @@ h1 {
 		"Loss",
 		"Despair"
         ];
-
         function chooseRandomString(buttonString) {
             var randomNumber = Math.floor(Math.random() * strings.length);
             var randomString = strings[randomNumber];
@@ -323,11 +324,9 @@ h1 {
             outputDiv.appendChild(br);
             outputDiv.scrollTop = outputDiv.scrollHeight;
         }
-
 function clearOutput() {
             var outputDiv = document.getElementById("output");
             outputDiv.innerHTML = "";
-
 	}
     </script>
 </body>
