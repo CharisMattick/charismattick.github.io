@@ -3,227 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mattick board simulator</title>
+    <title>Mattick Board Simulator</title>
     <style>
         body {
-    /* Define the font family */
-@font-face {
-    font-family: 'Luminari-Regular';
-    src: url('https://github.com/CharisMattick/charismattick.github.io/blob/31e7c4c87a50ed3b43701452ad1ed1f010d3a14c/Luminari-Regular.ttf') format('truetype');
-}
-/* Apply the font to the header */
-h1 {
-    font-family: 'Luminari-Regular', serif; /* Fallback to serif fonts if Luminari isn't available */
-}
+            /* Define the font family */
+            @font-face {
+                font-family: 'Luminari-Regular';
+                src: url('https://github.com/CharisMattick/charismattick.github.io/blob/31e7c4c87a50ed3b43701452ad1ed1f010d3a14c/Luminari-Regular.ttf') format('truetype');
+            }
 
-    text-align: center;
-    background-image: url('https://i.ibb.co/GJZ3Ch8/Mattick-board-vertical.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: top left;
-    	      }
+            /* Apply the font to the header */
+            h1 {
+                font-family: 'Luminari-Regular', serif; /* Fallback to serif fonts if Luminari isn't available */
+            }
 
-/* Adjustments to maintain clarity of content */
-h1, p, button, #output {
-    position: relative;
-    z-index: 1;
-    color: black; /* Ensures text is readable */
-}
-
-	    /* Button styles */
-.button1 {
-    top: 5%; /* Adjust the top position for button 1 */
-    left: 70%; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 0.5); /* Make button background fully opaque */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    
-.button2 {
-    top: 15%; /* Adjust the top position for button 1 */
-    left: 80%; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button3 {
-    top: 35%; /* Adjust the top position for button 1 */
-    left: 85%; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button4 {
-    top: 120px; /* Adjust the top position for button 1 */
-    left: 230px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button5 {
-    top: 170px; /* Adjust the top position for button 1 */
-    left: 190px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button6 {
-    top: 180px; /* Adjust the top position for button 1 */
-    left: 200px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button7 {
-    top: 230px; /* Adjust the top position for button 1 */
-    left: 150px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button8 {
-    top: 200px; /* Adjust the top position for button 1 */
-    left: 40px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button9 {
-    top: 180px; /* Adjust the top position for button 1 */
-    left: 50px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button10 {
-    top: 100px; /* Adjust the top position for button 1 */
-    left: 40px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button11 {
-    top: 30px; /* Adjust the top position for button 1 */
-    left: 40px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button12 {
-    top: 20px; /* Adjust the top position for button 1 */
-    left: 100px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-	    .button13 {
-    top: 50px; /* Adjust the top position for button 1 */
-    left: 50px; /* Adjust the left position for button 1 */
-    transform: translateX(-50%);
-    margin: 2px; /* Adjust the margin between buttons */
-    padding: 2px 2px; /* Adjust the padding inside buttons */
-    font-size: 12px; /* Adjust the font size of buttons */
-    color: black; /* Set button text color to black */
-    background-color: rgba(255, 255, 255, 1); /* Make button background fully opaque */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: auto; /* Allow buttons to adjust their width based on content */
-}
-/
-	    * Add styles for other buttons similarly */
-        button:hover {
-            background-color: #ddd; /* Change button background color on hover */
+            text-align: center;
+            background-image: url('https://i.ibb.co/GJZ3Ch8/Mattick-board-vertical.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top left;
         }
-       #output {
-    width: 300px;
-    height: 150px;
-    margin: 500px auto; /* Increase the top margin to move the output box further down */
-    overflow-y: scroll;
-    color: black;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-}
+
+        /* Adjustments to maintain clarity of content */
+        h1, p, button, #output {
+            position: relative;
+            z-index: 1;
+            color: black; /* Ensures text is readable */
+        }
+
+        /* Button styles */
+        .custom-button {
+            margin: 2px;
+            padding: 2px 2px;
+            font-size: 12px;
+            color: black;
+            background-color: rgba(255, 255, 255, 1);
+            border: none;
+            cursor: pointer;
+            width: auto;
+            position: absolute;
+            transform: translateX(-50%);
+        }
+
+        .button1 { top: 5%; left: 70%; }
+        .button2 { top: 15%; left: 80%; }
+        .button3 { top: 35%; left: 85%; }
+        .button4 { top: 120px; left: 230px; }
+        .button5 { top: 170px; left: 190px; }
+        .button6 { top: 180px; left: 200px; }
+        .button7 { top: 230px; left: 150px; }
+        .button8 { top: 200px; left: 40px; }
+        .button9 { top: 180px; left: 50px; }
+        .button10 { top: 100px; left: 40px; }
+        .button11 { top: 30px; left: 40px; }
+        .button12 { top: 20px; left: 100px; }
+        .button13 { top: 50px; left: 50px; }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        #output {
+            width: 300px;
+            height: 150px;
+            margin: 500px auto;
+            overflow-y: scroll;
+            color: black;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
         #logo {
-            width: 200px; /* Adjust the width of the image */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 20px; /* Add space below the image */
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-
     <button class="custom-button button1" onclick="chooseRandomString('Apathy')">Drop Apathy</button>
     <button class="custom-button button2" onclick="chooseRandomString('The Mystic')">Drop The Mystic</button>
     <button class="custom-button button3" onclick="chooseRandomString('The Artist')">Drop The Artist</button>
@@ -238,49 +97,16 @@ h1, p, button, #output {
     <button class="custom-button button12" onclick="chooseRandomString('Fear')">Drop Fear</button>
     <button class="custom-button button13" onclick="chooseRandomString('Despair')">Drop Despair</button>
     <div id="output"></div>
-	<button onclick="clearOutput()">Clear Output</button>
+    <button onclick="clearOutput()">Clear Output</button>
     <script>
         var strings = [
-		"Apathy",
-		"Insubstantial",
-		"Clarity",
-		"The Mystic",
-		"Challenge",
-		"False",
-		"Artist",
-		"Failure",
-		"Accept",
-		"The Past",
-		"Regret",
-		"Forgive",
-		"The Taskmaster",
-		"Resources",
-		"Greed",
-		"The Performer",
-		"Movement",
-		"Sex",
-		"Chaos",
-		"Pain",
-		"Luck",
-		"Mattick",
-		"The future",
-		"Be",
-		"The Scholar",
-		"Mind",
-		"Memory",
-		"The Engineer",
-		"Potency",
-		"Perspective",
-		"Ignorance by choice",
-		"Ignorance by ommision",
-		"Ignorance by design",
-		"Fear",
-		"Guilt",
-		"Abandoned",
-		"Stagnation",
-		"Loss",
-		"Despair"
+            "Apathy", "Insubstantial", "Clarity", "The Mystic", "Challenge", "False", "Artist", "Failure", "Accept",
+            "The Past", "Regret", "Forgive", "The Taskmaster", "Resources", "Greed", "The Performer", "Movement",
+            "Sex", "Chaos", "Pain", "Luck", "Mattick", "The future", "Be", "The Scholar", "Mind", "Memory",
+            "The Engineer", "Potency", "Perspective", "Ignorance by choice", "Ignorance by omission",
+            "Ignorance by design", "Fear", "Guilt", "Abandoned", "Stagnation", "Loss", "Despair"
         ];
+
         function chooseRandomString(buttonString) {
             var randomNumber = Math.floor(Math.random() * strings.length);
             var randomString = strings[randomNumber];
@@ -292,10 +118,11 @@ h1, p, button, #output {
             outputDiv.appendChild(br);
             outputDiv.scrollTop = outputDiv.scrollHeight;
         }
-function clearOutput() {
+
+        function clearOutput() {
             var outputDiv = document.getElementById("output");
             outputDiv.innerHTML = "";
-	}
+        }
     </script>
 </body>
 </html>
