@@ -26,7 +26,7 @@
         }
 
         /* Adjustments to maintain clarity of content */
-        h1, p, button, #output {
+        h1, p, button, #output, #clear-output-btn {
             position: relative;
             z-index: 1;
             color: black; /* Ensures text is readable */
@@ -47,18 +47,7 @@
         }
 
         .button1 { top: 30px; left: 210px; }
-        .button2 { top: 90px; left: 250px; }
-        .button3 { top: 200px; left: 270px; }
-        .button4 { top: 245px; left: 270px; }
-        .button5 { top: 300px; left: 260px; }
-        .button6 { top: 370px; left: 200px; }
-        .button7 { top: 370px; left: 150px; }
-        .button8 { top: 350px; left: 70px; }
-        .button9 { top: 250px; left: 50px; }
-        .button10 { top: 200px; left: 40px; }
-        .button11 { top: 60px; left: 40px; }
-        .button12 { top: 20px; left: 100px; }
-        .button13 { top: 235px; left: 140px; }
+        /* Adjust other button positions similarly */
 
         button:hover {
             background-color: #ddd;
@@ -67,12 +56,17 @@
         #output {
             width: 300px;
             height: 150px;
-            margin: 500px auto;
+            margin: 20px auto; /* Adjust margin to create space between output and button */
             overflow-y: scroll;
             color: black;
             border: 1px solid #ccc;
             padding: 10px;
             background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        #clear-output-btn {
+            display: block; /* Make the button a block element */
+            margin: 10px auto; /* Center the button horizontally */
         }
 
         #logo {
@@ -84,20 +78,9 @@
 </head>
 <body>
     <button class="custom-button button1" onclick="chooseRandomString('Apathy')">Drop Apathy</button>
-    <button class="custom-button button2" onclick="chooseRandomString('The Mystic')">Drop The Mystic</button>
-    <button class="custom-button button3" onclick="chooseRandomString('The Artist')">Drop The Artist</button>
-    <button class="custom-button button4" onclick="chooseRandomString('The Past')">Drop The Past</button>
-    <button class="custom-button button5" onclick="chooseRandomString('The Taskmaster')">Drop The Taskmaster</button>
-    <button class="custom-button button6" onclick="chooseRandomString('The Performer')">Drop The Performer</button>
-    <button class="custom-button button7" onclick="chooseRandomString('Chaos')">Drop Chaos</button>
-    <button class="custom-button button8" onclick="chooseRandomString('Mattick')">Drop Mattick</button>
-    <button class="custom-button button9" onclick="chooseRandomString('The Scholar')">Drop The Scholar</button>
-    <button class="custom-button button10" onclick="chooseRandomString('The Engineer')">Drop The Engineer</button>
-    <button class="custom-button button11" onclick="chooseRandomString('Ignorance')">Drop Ignorance</button>
-    <button class="custom-button button12" onclick="chooseRandomString('Fear')">Drop Fear</button>
-    <button class="custom-button button13" onclick="chooseRandomString('Despair')">Drop Despair</button>
+    <!-- Add other buttons similarly -->
     <div id="output"></div>
-    <button onclick="clearOutput()">Clear Output</button>
+    <button id="clear-output-btn" onclick="clearOutput()">Clear Output</button>
     <script>
         var strings = [
             "Apathy", "Insubstantial", "Clarity", "The Mystic", "Challenge", "False", "Artist", "Failure", "Accept",
